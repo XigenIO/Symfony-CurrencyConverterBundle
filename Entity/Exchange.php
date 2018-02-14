@@ -1,6 +1,6 @@
 <?php
 
-namespace Xigen\CurrencyConverterBundle\Entity;
+namespace Xigen\Bundle\CurrencyConverterBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Exchange
  *
  * @ORM\Table(name="exchange")
- * @ORM\Entity(repositoryClass="Xigen\CurrencyConverterBundle\Repository\ExchangeRepository")
+ * @ORM\Entity(repositoryClass="Xigen\Bundle\CurrencyConverterBundle\Repository\ExchangeRepository")
  */
 class Exchange
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Xigen\CurrencyConverterBundle;
+namespace Xigen\Bundle\CurrencyConverterBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Xigen\CurrencyConverterBundle\Command;
+namespace Xigen\Bundle\CurrencyConverterBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;

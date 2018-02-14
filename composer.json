@@ -1,5 +1,5 @@
 {
-    "name" : "Xigen/CurrencyConverter",
+    "name" : "xigen/currency-converter",
     "description" : "",
     "type" : "symfony-bundle",
     "authors" : [{
@@ -8,14 +8,13 @@
         "homepage": "https://xigen.co.uk"
     }],
     "require" : {
-        "php": ">=7.0.27",
+        "php": "^7",
         "guzzlehttp/guzzle": "^6.3",
-        "symfony/framework-bundle": "^3.3|~4.0"
+        "symfony/framework-bundle": "^3.3|^4.0"
     },
     "autoload" : {
-        "psr-0" : {
-            "Xigen\\CurrencyConverterBundle" : ""
+        "psr-4" : {
+            "Xigen\\Bundle\\CurrencyConverterBundle\\" : ""
         }
-    },
-    "target-dir" : "Xigen/CurrencyConverterBundle"
+    }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Xigen\CurrencyConverterBundle\Repository;
+namespace Xigen\Bundle\CurrencyConverterBundle\Repository;
 
 use GuzzleHttp\Client;
-use Xigen\CurrencyConverterBundle\Entity\Exchange;
+use Xigen\Bundle\CurrencyConverterBundle\Entity\Exchange;
 
 /**
  * ExchangeRepository
