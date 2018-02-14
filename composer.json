@@ -1,0 +1,21 @@
+{
+    "name" : "Xigen/CurrencyConverter",
+    "description" : "",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Chris Hilsdon",
+        "email" : "chrish@xigen.co.uk",
+        "homepage": "https://xigen.co.uk"
+    }],
+    "require" : {
+        "php": ">=7.0.27",
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/framework-bundle": "^3.3|~4.0"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Xigen\\CurrencyConverterBundle" : ""
+        }
+    },
+    "target-dir" : "Xigen/CurrencyConverterBundle"
+}
