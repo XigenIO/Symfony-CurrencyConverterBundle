@@ -54,14 +54,14 @@ class ExchangeRepository extends \Doctrine\ORM\EntityRepository
     /**
      * Convert from GBP to another currency
      * @param  string $currency
-     * @param  integer $amount
+     * @param  int $amount
      * @return float
      */
-    public function convertTo($currency, integer $amount)
+    public function convertTo($currency, int $amount)
     {
         $em = $this->getEntityManager();
         $localCurrency = $this->findOneBy(['currency' => strtoupper($currency)]);
 
-        return $amount * $localCurrency->getRate();
+        return round($amount * $localCurrency->getRate(), 2);
     }
 }
