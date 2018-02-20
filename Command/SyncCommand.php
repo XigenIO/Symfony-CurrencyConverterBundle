@@ -18,14 +18,7 @@ class SyncCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $convert = $this->getContainer()->get('currency_converter.convert');
-        $a = $convert->to('EUR', 10);
-        $b = $convert->from('EUR', 10);
-
-        dump([$a, $b]);
-
-        exit();
-
-        $update = $repo->updateLocalData();
+        $update = $convert->updateLocalCache();
         if (true === $update) {
             $output->writeLn('<info>Success:</info> Successfully updated with data source.');
 

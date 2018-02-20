@@ -48,6 +48,23 @@ class ConvertManager
     }
 
     /**
+     * Fetch and then update the local cache
+     * @return array
+     */
+    public function updateLocalCache()
+    {
+        $soruceData = $this->fetchSourceData();
+        $dataArray = \GuzzleHttp\json_decode($soruceData->getContents(), true);
+
+        $rates = $dataArray['rates'];
+        $cachedRates = $this->cache->getItem(self::CACHE_KEY);
+        $cachedRates->set($dataArray['rates']);
+        $this->cache->save($cachedRates);
+
+        return $rates;
+    }
+
+    /**
      * Fetch the rate for a currency
      * @param  string $currency
      * @return float
@@ -91,22 +108,5 @@ class ConvertManager
         // TODO Add some error checking here if the API fails
 
         return $request->getBody();
-    }
-
-    /**
-     * Fetch and then update the local cache
-     * @return array
-     */
-    private function updateLocalCache()
-    {
-        $soruceData = $this->fetchSourceData();
-        $dataArray = \GuzzleHttp\json_decode($soruceData->getContents(), true);
-
-        $rates = $dataArray['rates'];
-        $cachedRates = $this->cache->getItem(self::CACHE_KEY);
-        $cachedRates->set($dataArray['rates']);
-        $this->cache->save($cachedRates);
-
-        return $rates;
     }
 }
