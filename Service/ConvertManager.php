@@ -48,7 +48,7 @@ class ConvertManager
     }
 
     /**
-     * Fetch and then update the local cache
+     * Fetch and then update the local cache. Cached data will last 4 hours
      * @return array
      */
     public function updateLocalCache()
@@ -58,7 +58,8 @@ class ConvertManager
 
         $rates = $dataArray['rates'];
         $cachedRates = $this->cache->getItem(self::CACHE_KEY);
-        $cachedRates->set($dataArray['rates']);
+        $cachedRates->expiresAfter(14400);
+        $cachedRates->set($rates);
         $this->cache->save($cachedRates);
 
         return $rates;

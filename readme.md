@@ -1,7 +1,7 @@
 # Currency Converter
 Currency Converter bundle for Symfony
 
-Provides an easy way to convert an amount of GBP to common currencies within a Symfony project using the [fixer.io][fixer-io] API. Rates are stored in the symfony cache for a maximum of 24 hours before being updated automaticly.
+Provides an easy way to convert an amount of GBP to common currencies within a Symfony project using the [fixer.io][fixer-io] API. Rates are stored in the symfony cache for a maximum of 4 hours before being updated automaticly.
 
 ## Installation
 You can install this bundle via composer. You will need to manually add the repository by placing this in your projects composer.json file:
