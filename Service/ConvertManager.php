@@ -30,7 +30,7 @@ class ConvertManager
         $currency = strtoupper($currency);
         $rate = $this->fetchRate($currency);
 
-        return round($amount / $rate, 2);
+        return round($amount * $rate, 2);
     }
 
     /**
@@ -44,7 +44,7 @@ class ConvertManager
         $currency = strtoupper($currency);
         $rate = $this->fetchRate($currency);
 
-        return round($amount * $rate, 2);
+        return round($amount / $rate, 2);
     }
 
     /**
