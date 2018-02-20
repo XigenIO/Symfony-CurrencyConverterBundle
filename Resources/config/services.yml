@@ -1,4 +1,4 @@
 services:
-#    currency_converter.example:
-#        class: Xigen\Bundle\CurrencyConverterBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+   currency_converter.convert:
+       class: Xigen\Bundle\CurrencyConverterBundle\Service\ConvertManager
+       arguments: ["@cache.app"]
