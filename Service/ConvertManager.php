@@ -18,7 +18,7 @@ class ConvertManager
     /**
      * @var \Psr\Cache\CacheItemPoolInterface
      */
-    protected $cache;
+    private $cache;
 
     public function __construct(CacheItemPoolInterface $cache)
     {
@@ -118,7 +118,7 @@ class ConvertManager
             $client = new Client();
             $request = $client->request(
                 'GET',
-                "https://data.fixer.io/api/latest?base=GBP&access_key={$accessKey}"
+                "https://data.fixer.io/api/latest?base=GBP&access_key={$this->accessKey}"
             );
         } catch (\Exception $e) {
             return false;
