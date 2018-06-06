@@ -54,6 +54,10 @@ class ConvertManager
     public function updateLocalCache()
     {
         $soruceData = $this->fetchSourceData();
+        if (false === $soruceData) {
+            return false;
+        }
+
         $dataArray = \GuzzleHttp\json_decode($soruceData->getContents(), true);
 
         $rates = $dataArray['rates'];
@@ -73,6 +77,10 @@ class ConvertManager
     protected function fetchRate($currency)
     {
         $rates = $this->fetchRates();
+        if (false === $rates) {
+            return false;
+        }
+
         if (array_key_exists($currency, $rates)) {
             return $rates[$currency];
         }
@@ -100,13 +108,15 @@ class ConvertManager
      */
     private function fetchSourceData()
     {
-        $client = new Client();
-        $request = $client->request(
-            'GET',
-            'https://api.fixer.io/latest?base=GBP'
-        );
-
-        // TODO Add some error checking here if the API fails
+        try {
+            $client = new Client();
+            $request = $client->request(
+                'GET',
+                'https://api.fixer.io/latest?base=GBP'
+            );
+        } catch (\Exception $e) {
+            return false;
+        }
 
         return $request->getBody();
     }
