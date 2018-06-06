@@ -10,6 +10,12 @@ class ConvertManager
     const CACHE_KEY = 'currency_converter.convert.rates';
 
     /**
+     * Access key
+     * @var string
+     */
+    private $accessKey = 'b254809ef0bd714e95afbd3e264cc760';
+
+    /**
      * @var \Psr\Cache\CacheItemPoolInterface
      */
     protected $cache;
@@ -62,7 +68,7 @@ class ConvertManager
 
         $rates = $dataArray['rates'];
         $cachedRates = $this->cache->getItem(self::CACHE_KEY);
-        $cachedRates->expiresAfter(14400);
+        $cachedRates->expiresAfter(43200);
         $cachedRates->set($rates);
         $this->cache->save($cachedRates);
 
@@ -112,7 +118,7 @@ class ConvertManager
             $client = new Client();
             $request = $client->request(
                 'GET',
-                'https://api.fixer.io/latest?base=GBP'
+                "https://data.fixer.io/api/latest?base=GBP&access_key={$accessKey}"
             );
         } catch (\Exception $e) {
             return false;
