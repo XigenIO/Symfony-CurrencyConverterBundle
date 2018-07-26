@@ -13,7 +13,7 @@ class ConvertManager
      * Access key
      * @var string
      */
-    private $accessKey = '902e921790925133ab336e4f7db7335a';
+    private $accessKey = 'b8b61adb8f4486f53081c9f3b21f5dc5';
 
     /**
      * @var \Psr\Cache\CacheItemPoolInterface
@@ -60,11 +60,17 @@ class ConvertManager
     public function updateLocalCache()
     {
         $soruceData = $this->fetchSourceData();
+
         if (false === $soruceData) {
             return false;
         }
 
         $dataArray = \GuzzleHttp\json_decode($soruceData->getContents(), true);
+
+        // Check when the API isn't working correctly
+        if (false === $dataArray['success']) {
+            return false;
+        }
 
         $rates = $dataArray['rates'];
         $cachedRates = $this->cache->getItem(self::CACHE_KEY);
