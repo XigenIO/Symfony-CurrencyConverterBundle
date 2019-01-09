@@ -4,27 +4,11 @@ Currency Converter bundle for Symfony
 Provides an easy way to convert an amount of GBP to common currencies within a Symfony project using the [fixer.io][fixer-io] API. Rates are stored in the symfony cache for a maximum of 4 hours before being updated automaticly.
 
 ## Installation
-You can install this bundle via composer. You will need to manually add the repository by placing this in your projects composer.json file:
-```json
-{
-
-"repositories": {
-    "bundle-CurrencyConverter": {
-        "type": "vcs",
-        "url": "https://git.xigen.co.uk/Symfony-Bundles/CurrencyConverter.git"
-    }
-}
-
-}
-```
-
-and then require the bundle as normal.
-
 ```bash
-composer require xigen/currency-converter
+composer require xigen.io/currency-converter
 ```
 
-Finally register the bundle in `app/AppKernel.php`:
+Finally register the bundle in `app/AppKernel.php` (if using Symfony 3):
 ```php
 $bundles = [
     [...]
@@ -33,7 +17,6 @@ $bundles = [
 ```
 
 ## Usage
-
 ```php
 // Fetch the convert service
 $convert = $this->getContainer()->get('currency_converter.convert');

@@ -1,6 +1,6 @@
 {
-    "name" : "xigen/currency-converter",
-    "description" : "",
+    "name" : "xigen.io/currency-converter",
+    "description" : "Currency Converter bundle for Symfony",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Chris Hilsdon",
@@ -8,9 +8,9 @@
         "homepage": "https://xigen.co.uk"
     }],
     "require" : {
-        "php": "^7",
+        "php": "^7.2",
         "guzzlehttp/guzzle": "^6.3",
-        "symfony/framework-bundle": "^3.3|^4.0"
+        "symfony/framework-bundle": "^3.4|^4"
     },
     "autoload" : {
         "psr-4" : {
