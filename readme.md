@@ -5,7 +5,7 @@ Provides an easy way to convert an amount of GBP to common currencies within a S
 
 ## Installation
 ```bash
-composer require xigen.io/currency-converter
+composer require xigen.io/currency-converter-bundle
 ```
 
 Finally register the bundle in `app/AppKernel.php` (if using Symfony 3):

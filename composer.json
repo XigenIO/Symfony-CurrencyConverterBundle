@@ -1,5 +1,5 @@
 {
-    "name" : "xigen.io/currency-converter",
+    "name" : "xigen.io/currency-converter-bundle",
     "description" : "Currency Converter bundle for Symfony",
     "type" : "symfony-bundle",
     "authors" : [{
